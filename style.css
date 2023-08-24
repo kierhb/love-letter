@@ -1,0 +1,240 @@
+body,
+html {
+  height: 100%;
+}
+
+body {
+  perspective: 1000px;
+  background: #363a3f;
+  position: relative;
+}
+
+body,
+div,
+ul,
+li {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+div,
+ul,
+li,
+svg {
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+li,
+svg {
+  transform-origin: center top;
+}
+
+.gradient {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.lotus {
+  transform-origin: center center;
+  transform: rotateX(70deg);
+  -webkit-animation: rotate 20000ms linear infinite forwards;
+  animation: rotate 20000ms linear infinite forwards;
+  position: absolute;
+  top: calc(50% - 18px);
+  left: calc(50% - 18px);
+  width: 36px;
+  height: 36px;
+}
+.lotus ul {
+  position: relative;
+  width: 36px;
+  height: 36px;
+}
+.lotus li {
+  position: absolute;
+}
+.lotus li svg {
+  display: block;
+  height: auto;
+}
+.lotus li svg path {
+  fill: url(#gradient);
+}
+.lotus:nth-child(1) li {
+  top: 18px;
+  left: calc(50% - 18px);
+}
+.lotus:nth-child(1) li:nth-child(1) {
+  transform: rotateZ(45deg) rotateX(15deg) rotateY(5deg);
+}
+.lotus:nth-child(1) li:nth-child(2) {
+  transform: rotateZ(90deg) rotateX(15deg) rotateY(5deg);
+}
+.lotus:nth-child(1) li:nth-child(3) {
+  transform: rotateZ(135deg) rotateX(15deg) rotateY(5deg);
+}
+.lotus:nth-child(1) li:nth-child(4) {
+  transform: rotateZ(180deg) rotateX(15deg) rotateY(5deg);
+}
+.lotus:nth-child(1) li:nth-child(5) {
+  transform: rotateZ(225deg) rotateX(15deg) rotateY(5deg);
+}
+.lotus:nth-child(1) li:nth-child(6) {
+  transform: rotateZ(270deg) rotateX(15deg) rotateY(5deg);
+}
+.lotus:nth-child(1) li:nth-child(7) {
+  transform: rotateZ(315deg) rotateX(15deg) rotateY(5deg);
+}
+.lotus:nth-child(1) li:nth-child(8) {
+  transform: rotateZ(360deg) rotateX(15deg) rotateY(5deg);
+}
+.lotus:nth-child(1) li svg {
+  width: 72px;
+  transform: rotateX(75deg);
+  -webkit-animation: bloom 1000ms cubic-bezier(0, 0.75, 0.25, 1) forwards;
+  animation: bloom 1000ms cubic-bezier(0, 0.75, 0.25, 1) forwards;
+}
+.lotus:nth-child(2) li {
+  top: 15px;
+  left: calc(50% - 15px);
+}
+.lotus:nth-child(2) li:nth-child(1) {
+  transform: rotateZ(60deg) rotateX(30deg) rotateY(5deg);
+}
+.lotus:nth-child(2) li:nth-child(2) {
+  transform: rotateZ(120deg) rotateX(30deg) rotateY(5deg);
+}
+.lotus:nth-child(2) li:nth-child(3) {
+  transform: rotateZ(180deg) rotateX(30deg) rotateY(5deg);
+}
+.lotus:nth-child(2) li:nth-child(4) {
+  transform: rotateZ(240deg) rotateX(30deg) rotateY(5deg);
+}
+.lotus:nth-child(2) li:nth-child(5) {
+  transform: rotateZ(300deg) rotateX(30deg) rotateY(5deg);
+}
+.lotus:nth-child(2) li:nth-child(6) {
+  transform: rotateZ(360deg) rotateX(30deg) rotateY(5deg);
+}
+.lotus:nth-child(2) li svg {
+  width: 60px;
+  transform: rotateX(60deg);
+  -webkit-animation: bloom 1100ms cubic-bezier(0, 0.75, 0.25, 1) 150ms forwards;
+  animation: bloom 1100ms cubic-bezier(0, 0.75, 0.25, 1) 150ms forwards;
+}
+.lotus:nth-child(3) li {
+  top: 12px;
+  left: calc(50% - 12px);
+}
+.lotus:nth-child(3) li:nth-child(1) {
+  transform: rotateZ(120deg) rotateX(60deg) rotateY(5deg);
+}
+.lotus:nth-child(3) li:nth-child(2) {
+  transform: rotateZ(240deg) rotateX(60deg) rotateY(5deg);
+}
+.lotus:nth-child(3) li:nth-child(3) {
+  transform: rotateZ(360deg) rotateX(60deg) rotateY(5deg);
+}
+.lotus:nth-child(3) li svg {
+  width: 48px;
+  transform: rotateX(30deg);
+  -webkit-animation: bloom 1200ms cubic-bezier(0, 0.75, 0.25, 1) 300ms forwards;
+  animation: bloom 1200ms cubic-bezier(0, 0.75, 0.25, 1) 300ms forwards;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    transform: rotateX(70deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(70deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(70deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(70deg) rotateZ(360deg);
+  }
+}
+@-webkit-keyframes bloom {
+  to {
+    transform: none;
+  }
+}
+@keyframes bloom {
+  to {
+    transform: none;
+  }
+}
+
+/* CUSTOM CODE START */
+.flower {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+
+.click-me {
+  height: 100vh;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+
+  width: 450px;
+  background-color: pink;
+  border: none;
+
+  font-family: "Nunito", sans-serif;
+  font-family: "Shadows Into Light", cursive;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 25px;
+  box-shadow: 0 9px #999;
+}
+
+.button:active {
+  background-color: rgb(253, 164, 179);
+  box-shadow: 0 5px #666;
+  /* transform: translateY(4px); */
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: "(=゜ω゜)";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 180px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.body {
+  height: 100%;
+}
